@@ -1,5 +1,19 @@
-.content{
+.content, .grid-cards{
     @include breakpoints();
-    color: rgb(255, 255, 255);
-    
+    color: #ffffff;
+    z-index: 298645;
 }
+
+.presentation{
+    h1{
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+    h2{
+        font-size: 2rem;
+        font-weight: 400;
+        margin-bottom: 20px;
+    }
+}
+
