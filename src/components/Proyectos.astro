@@ -1,0 +1,97 @@
+---
+import HTML_Icon from "./icons/Html.astro"; 
+import CSS_Icon from "./icons/CSS_Icon.astro";
+import JavaScript_Icon from "./icons/JavaScript_Icon.astro";
+import Tailwind_Icon from "./icons/Tailwind.astro";
+import Astro_Icon from "./icons/AstroIcon.astro";
+
+
+const TAGS = {
+    html: {
+        name: "HTML",
+        class: "bg-gray-600/70 text-white",
+        icon: HTML_Icon,
+    },
+    css: {
+        name: "CSS",
+        class: "bg-gray-600/70 text-white",
+        icon: CSS_Icon,
+    },
+    javascript: {
+        name: "JavaScript",
+        class: "bg-gray-600/70 text-white",
+        icon: JavaScript_Icon,
+    },
+    tailwind: {
+        name: "Tailwind",
+        class: "bg-gray-600/70 text-white",
+        icon: Tailwind_Icon,
+    },
+    astro: {
+        name: "Astro",
+        class: "bg-gray-600/70 text-white",
+        icon: Astro_Icon,
+    },
+    
+};
+
+// AGREGAR AQUI LOS PROYECTOS PARA MOSTRAR EN LA PAGINA
+const PROYECTS = [
+    {
+        title: "Rediseño de la página de Portafolio.co",
+        description:
+            "Rediseño Portafolio.co para su 30 aniversario, con el fin de mejorar la experiencia de usuario y la accesibilidad. Se adecuo a los estándares de la W3C y se implemento un diseño responsivo.",
+        image: [
+            "/proyectos_imagenes/portafolio-desktop.webp",
+            "/proyectos_imagenes/portafolio-mobile.webp",
+        ],
+        tags: [TAGS.html, TAGS.css, TAGS.javascript],
+    },
+
+    {
+        title: "Pagina arbyl.me (esta pagina)",
+        description:
+            "Pagina personal para mostrar mis proyectos y habilidades. Se implemento un diseño responsivo y se utilizo Astro para generar el sitio estático y tailwind para los estilos.",
+        image: [
+            "/proyectos_imagenes/portafolio-desktop.webp",
+            "/proyectos_imagenes/portafolio-mobile.webp",
+        ],
+        tags: [TAGS.astro, TAGS.tailwind],
+    },
+];
+---
+
+{
+    PROYECTS.map((project) => (
+        <article class="mb-12">
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">
+                {project.title}
+            </h3>
+            <p class="text-base mb-4 text-pretty">{project.description}</p>
+            <ul class="flex gap-x-2 flex-row">
+                {project.tags.map((tag) => (
+                    <li>
+                        <span class={`flex gap-x-2 rounded-full text-xs ${tag.class}
+                        py-1 px-2 items-center shadow-lg shadow-gray-900/90
+                        `}>
+                            <tag.icon class="size-5 rounded-md" />
+                            {tag.name}
+                            </li>
+                        </span>
+                ))}
+            </ul>
+
+            <ul class="flex max-h-72 gap-x-2 mt-5">
+                {project.image.map((images) => (
+                    <li>
+                        <img
+                            src={images}
+                            alt="Captura de pantalla del proyecto"
+                            class=" w-auto h-full object-cover rounded-xl shadow-lg shadow-gray-900/90"
+                        />
+                    </li>
+                ))}
+            </ul>
+        </article>
+    ))
+}
