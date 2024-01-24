@@ -1,0 +1,44 @@
+@mixin flex_jus_ali_dir_wrap($justify, $align, $direction:row, $wrap:wrap) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+}
+
+@mixin breakpoints1(){
+    margin: 0 auto;
+
+    @media screen and (min-width: 1280px) {
+        max-width: 1200px;
+    }
+    @media screen and (min-width: 1024px) and (max-width: 1279px) {
+        width: 996px;
+    }
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        width: 736px;
+    }
+    @media screen and (min-width: 480px) and (max-width: 767px) {
+        width: 448px;
+    }
+    @media screen and (max-width: 479px) {
+        margin: 0 16px;
+    }
+}
+
+@mixin breakpoints(){
+    margin: 0 auto;
+    @media screen and (min-width: 1024px){
+        max-width: 1200px;
+        padding: 0 40px;
+    }
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        max-width: 736px;
+    }
+    @media screen and (min-width: 480px) and (max-width: 767px) {
+        width: 448px;
+    }
+    @media screen and (max-width: 479px) {
+        margin: 0 16px;
+    }
+}
