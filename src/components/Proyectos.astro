@@ -43,27 +43,16 @@ const PROYECTS = [
             "Rediseño Portafolio.co para su 30 aniversario, con el fin de mejorar la experiencia de usuario y la accesibilidad. Se adecuo a los estándares de la W3C y se implemento un diseño responsivo.",
         image: [
             "/proyectos_imagenes/portafolio-desktop.webp",
-            "/proyectos_imagenes/portafolio-mobile.webp",
+            //"/proyectos_imagenes/portafolio-mobile.webp",
         ],
         tags: [TAGS.html, TAGS.css, TAGS.javascript],
-    },
-
-    {
-        title: "Pagina arbyl.me (esta pagina)",
-        description:
-            "Pagina personal para mostrar mis proyectos y habilidades. Se implemento un diseño responsivo y se utilizo Astro para generar el sitio estático y tailwind para los estilos.",
-        image: [
-            "/proyectos_imagenes/portafolio-desktop.webp",
-            "/proyectos_imagenes/portafolio-mobile.webp",
-        ],
-        tags: [TAGS.astro, TAGS.tailwind],
     },
 ];
 ---
 
 {
     PROYECTS.map((project) => (
-        <article class="mb-12">
+        <article class="mb-12 max-w-2xl">
             <h3 class="text-2xl font-semibold text-yellow-200 mb-2">
                 {project.title}
             </h3>

@@ -1,14 +1,41 @@
-<footer class="rounded-lg shadow m-4 bg-black/30 flex flex-row">
-    <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">2024 <a href="https://flowbite.com/" class="hover:underline">arbyl.me</a>
-    </span>
-    <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
-        <li>
-            <a href="#" class="hover:underline me-4 md:me-6">Sobre mí</a>
-        </li>
-        <li>
-            <a href="#" class="hover:underline">Contacto</a>
-        </li>
-    </ul>
+---
+import SocialPill from "../components/icons/SocialPill.astro";
+import AstroIcon from "./icons/AstroIcon.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import UpIcon from "./icons/UpIcon.astro";
+---
+
+<footer class="rounded-lg shadow m-4 bg-black/30">
+    <div
+        class="w-full mx-auto max-w-screen-md p-4 md:flex md:items-center md:justify-between"
+    >
+        <span class="text-sm text-gray-400 sm:text-center"
+            >© 2024 <a href="https://flowbite.com/" class="hover:underline"
+                >arbyl.me</a
+            >
+        </span>
+        <ul
+            class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0 gap-3"
+        >
+            <li>
+                <a href="/#inicio" class="hover:underline flex">Ir arriba
+                    <UpIcon class="size-4" />
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="w-full mx-auto max-w-screen-md p-4 md:flex md:items-center md:justify-start">
+        <span class="flex flex-row items-center gap-x-2 text-sm text-gray-400 sm:text-center"
+            >Sitio hecho con
+            <span class="flex gap-x-2 rounded-full text-xs
+            py-1 px-2 items-center shadow-lg shadow-gray-900/90 bg-gray-800">
+                <AstroIcon class="size-4" /> Astro
+            </span>
+            y
+            <span class="flex gap-x-2 rounded-full text-xs
+            py-1 px-2 items-center shadow-lg shadow-gray-900/90 bg-gray-800">
+                <Tailwind class="size-4" /> Tailwind
+            </span>
+        </span>
     </div>
 </footer>

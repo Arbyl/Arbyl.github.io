@@ -1,9 +1,76 @@
-<header class="flex justify-center items-center py-5 w-full mx-auto">
-    <nav class="flex gap-x-10 opacity-80">
-        <a href="#top">Inicio</a>
-        <a href="#experiencia">Experiencia</a>
-        <a href="#projectos">Projectos</a>
-        <a href="#sombre-mi">Sobre mí</a>
-        <a href="#contact">Contacto</a>
+---
+const navItems = [
+    {
+        title: "inicio",
+        url: "/#inicio",
+    },
+    {
+        title: "Experiencia",
+        url: "/#experiencia",
+    },
+    {
+        title: "Proyectos",
+        url: "/#proyectos",
+    },
+    {
+        title: "Sobre mí",
+        url: "/#sobre-mi",
+    },
+];
+---
+
+<header
+    class={`
+    flex justify-center items-center
+    mx-auto
+    py-5
+    sticky top-0
+    w-full xl:w-[1120px]
+    z-10
+  `}
+>
+    <nav
+        class={`
+      border border-black rounded-full
+      px-3 py-1
+      flex flex-row items-center
+      bg-black/70
+      backdrop-blur-2xl
+      shadow-md shadow-black/60
+      
+    `}
+    >
+        {
+            navItems.map((link) => (
+                <a
+                    class="hover:bg-white/10 rounded-full px-2 sm:px-3 transition text-sm sm:text-base"
+                    href={link.url}
+                >
+                    {link.title}
+                </a>
+            ))
+        }
     </nav>
 </header>
+
+<script>
+    const $navAElements: Element[] = [
+        ...document.querySelectorAll("header nav a"),
+    ];
+
+    window.addEventListener("scroll", () => {
+        $navAElements.forEach((a) => {
+            const selectionForSection = a.getAttribute("href")?.substring(1);
+            const sectionElement: HTMLDivElement | null =
+                document.querySelector(selectionForSection || "");
+
+            if (!sectionElement) return;
+            const selectionTop = sectionElement.offsetTop - 150;
+            if (window.scrollY <= selectionTop) return;
+            $navAElements.forEach((aToRemove) =>
+                aToRemove.classList.remove("bg-white/15"),
+            );
+            a.classList.add("bg-white/15");
+        });
+    });
+</script>

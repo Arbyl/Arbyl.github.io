@@ -10,6 +10,8 @@ import SectionContainer from "../components/SectionContainer.astro";
 import Briefcase from "../components/icons/Briefcase.astro";
 import Proyectos from "../components/Proyectos.astro";
 import CodeIcon from "../components/icons/CodeIcon.astro";
+import SobreMi from "../components/SobreMi.astro";
+import UserIcon from "../components/icons/UserIcon.astro";
 
 ---
 
@@ -17,15 +19,15 @@ import CodeIcon from "../components/icons/CodeIcon.astro";
 	title="Portafolio de Andres Robayo - Desarrollador y Progrmamador Web"
 	description="Contrata para crear tu aplicacion web o movil, Desarrollador Web especializado en diseños responsive y aplicaciones unicas.">
 	<main class="px-6 mx-auto">
-		<SectionContainer class="pt-44 pb-24">
+		<SectionContainer class="pt-44 pb-24" id="inicio">
 			<img class="rounded-full size-[100px] mb-4" src="/pink.webp" alt="" />
 			<h1
 				class="text-white text-2xl md:text-5xl font-bold flex flex-row gap-x-4 
 				lg:pb-10 pb-6 "
 			>
-				Hey, soy Andrés
+				¡Hola!, soy Andrés
 				<a
-					href="https://linkedin.com/in/arobayo"
+					href="https://linkedin.com/in/arobayo" 
 					target="_blank"
 					rel="noopener"
 					class="flex justify-center items-center"
@@ -66,5 +68,30 @@ import CodeIcon from "../components/icons/CodeIcon.astro";
 				Proyectos</h2>
 			<Proyectos />
 		</SectionContainer>
+
+		<SectionContainer id="sobre-mi" >
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+				<UserIcon class="size-7 mr-2"/>
+				Sobre mí</h2>
+				<SobreMi />
+		</SectionContainer>
+
+		<div class="my-12">
+			<h2 class="text-2xl font-semibold mb-3 flex gap-x-3 items-center">
+				Contactame, estare encantado de conversar 😄</h2>
+			<nav class="flex gap-x-2 mt-8">
+				<SocialPill href="http://linkedin.com/in/arobayo">
+					<LinkedInIcon class="size-4 md:size-6" />LinkedIn
+				</SocialPill>
+				<SocialPill href="http://linkedin.com/in/arobayo">
+					<GitHubIcon class="size-4 md:size-6" />GitHub
+				</SocialPill>
+				<SocialPill href="mailto:aflara123@gmail.com">
+					<EmailIcon class="size-4 md:size-6" />Email
+				</SocialPill>
+			</nav>
+		</div>
+
+
 	</main>
 </Layout>
