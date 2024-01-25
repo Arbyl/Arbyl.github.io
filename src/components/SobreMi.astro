@@ -1,3 +1,7 @@
+---
+import Codepen from "./icons/Codepen.astro";
+---
+
 <section  class="flex lg:flex-row flex-col-reverse justify-around gap-10 max-w-2xl">
     <div class="flex flex-col gap-y-5 w-auto [&>p>strong]:text-yellow-200 [&>p]:text-pretty">
         <p>
@@ -16,6 +20,16 @@
             También <strong>tengo una publicación en la IEEE Explore</strong>, donde presento un estado del arte de técnicas de mejoramiento 
             en redes inalámbricas de largo alcance LoRa. Puedes echarle un vistazo a mi publicación <a href="https://ieeexplore.ieee.org/document/10381139" target="_blank" class="text-blue-400">aquí</a>.
         </p> 
+
+        <p class="flex flex-col items-center gap-y-6 ">
+            En mis ratos me gusta poner a prueba algunas tecnicas de CSS y jugar un poco con algunas animaciones, visualizaciones y mas.
+            <a href="/codepensPage" class={`flex rounded-full text-xs py-1 px-2 items-center shadow-lg bg-gray-600/70 text-white
+                         shadow-gray-800/50 w-48 hover:scale-105`}>
+                <Codepen class="size-5 rounded-md mx-3" />
+                Conoce mis Pen aquí
+            </a>
+        </p> 
+
     </div>
     <img src="./me2.jpg" alt="Andrés Robayo Lara" class="rounded-full size-36 lg:size-48">
 </section>
