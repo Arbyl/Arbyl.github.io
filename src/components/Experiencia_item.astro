@@ -11,21 +11,21 @@ const { title, date, description, link } = Astro.props;
 <p class="mb-4 text-base font-normal text-gray-200 text-pretty">
     {description}
 </p>
-{
+{ 
     link && (
-        <a
-            href={link}
+        <a   
+            href={link} target="_blank" rel="noopener noreferrer"
             class=" inline-flex items-center px-4 py-2 text-sm font-medium border rounded-lg focus:z-10 focus:ring-4 focus:outline-none  focus:text-blue-700 bg-gray-800 text-gray-400 border-gray-600 hover:text-white hover:bg-gray-700 focus:ring-gray-700"
         >
-            Visitar sitio{" "}
-            <svg
-            class="ml-2"
+            Visitar sitio{" "}  
+            <svg 
+            class="ml-2"  
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
                 stroke-width="2"
                 stroke="currentColor"
-                fill="none"
+                fill="none" 
                 stroke-linecap="round"
                 stroke-linejoin="round"
             >
@@ -39,3 +39,4 @@ const { title, date, description, link } = Astro.props;
         </a>
     )
 }
+ 
