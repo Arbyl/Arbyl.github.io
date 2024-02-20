@@ -1,25 +1,20 @@
 ---
-const { title, description, iframe } = Astro.props;
+const { title, description, penID } = Astro.props;
 ---
 
-<h3 class="text-lg font-semibold text-yellow-200/90">{title}</h3>
+<h3 class="text-xl font-semibold text-yellow-200/90">{title}</h3>
 <p class="mb-4 text-base font-normal text-gray-200 text-pretty">
     {description}
 </p>
 <div>
     <p 
         class="codepen" 
-        data-height="300" 
+        data-height="400" 
         data-default-tab="html,result" 
-        data-slug-hash="vYvZjxR" 
+        data-slug-hash={penID} 
         data-user="Andres-Robayo-the-builder" 
         style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-            <span>See the Pen 
-                <a href={iframe}>
-            Verificacion de campo email valido (NO JS)</a> by Andres Robayo 
-            (<a href="https://codepen.io/Andres-Robayo-the-builder">@Andres-Robayo-the-builder</a>)
-            on <a href="https://codepen.io">CodePen</a>.
-        </span>
+            
     </p>
     <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 </div>

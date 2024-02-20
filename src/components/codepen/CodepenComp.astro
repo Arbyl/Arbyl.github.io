@@ -4,12 +4,17 @@ import CodepenItem from "./CodepenItem.astro";
 const CODEPEN = [
     {
         title: "Verificacion visual de email con CSS (NOJS)",
-        description: "Este es un ejemplo de como verificar un email con CSS, sin necesidad de JS.",
-        iframe: "https://codepen.io/Andres-Robayo-the-builder/full/vYvZjxR",
+        description: "Ejemplo de como verificar el formato de email visualmente con CSS, sin necesidad de JS.",
+        penID: "vYvZjxR",
+    },
+    {
+        title: "Animacion basada en scroll (NOJS)",
+        description: "Animacion con la tecnica Animation-timeline sin necesidad de usar JavaScript para lectura del scroll.",
+        penID: "NWJYoBg",
     },
 ]
 ---
-<ul>
+<ul class="flex flex-col gap-10 mt-8">
     {CODEPEN.map((pen) => (
         <li>
             <CodepenItem {...pen} />
