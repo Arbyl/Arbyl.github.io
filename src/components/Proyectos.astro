@@ -1,10 +1,10 @@
 ---
-import HTML_Icon from "./icons/Html.astro"; 
+import HTML_Icon from "./icons/Html.astro";
 import CSS_Icon from "./icons/CSS_Icon.astro";
 import JavaScript_Icon from "./icons/JavaScript_Icon.astro";
 import Tailwind_Icon from "./icons/Tailwind.astro";
 import Astro_Icon from "./icons/AstroIcon.astro";
-
+import UpIcon from "./icons/UpIcon.astro";
 
 const TAGS = {
     html: {
@@ -32,7 +32,6 @@ const TAGS = {
         class: "bg-gray-600/70 text-white",
         icon: Astro_Icon,
     },
-    
 };
 
 // AGREGAR AQUI LOS PROYECTOS PARA MOSTRAR EN LA PAGINA
@@ -46,16 +45,27 @@ const PROYECTS = [
             //"/proyectos_imagenes/portafolio-mobile.webp",
         ],
         tags: [TAGS.html, TAGS.css, TAGS.javascript],
+
+        link: "https://portafolio.co",
     },
+
+    {
+        title: "Demo clon pagina Lego",
+        description:
+            "Clon de la pagina de Lego con Astro, uso de View Transitions, y manejo de datos con Astro.",
+        image: ["/proyectos_imagenes/lego-shot.jpg"],
+        tags: [TAGS.astro, TAGS.html, TAGS.css, TAGS.javascript],
+        link: "https://symphonious-salmiakki-c88526.netlify.app/"
+    },
+
     {
         title: "Codepens de CSS y Frontend",
-        description:"Sitio web que muestra algunos desarrollos propios en Codepen, con el fin de mostrar avances en el desarrollo de interfaces de usuario, nuevas tecnicas de CSS y desarrollos de interes.",
+        description:
+            "Sitio web que muestra algunos desarrollos propios en Codepen, con el fin de mostrar avances en el desarrollo de interfaces de usuario, nuevas tecnicas de CSS y desarrollos de interes.",
 
-        image: [
-            "/penvid.gif",
-            //"/proyectos_imagenes/portafolio-mobile.webp",
-        ],
+        image: ["/penvid.gif"],
         tags: [TAGS.html, TAGS.css, TAGS.javascript],
+        link: "/demos-site"
     },
 ];
 ---
@@ -70,27 +80,44 @@ const PROYECTS = [
             <ul class="flex gap-x-2 flex-row">
                 {project.tags.map((tag) => (
                     <li>
-                        <span class={`flex gap-x-2 rounded-full text-xs ${tag.class}
+                        <span
+                            class={`flex gap-x-2 rounded-full text-xs ${tag.class}
                         py-1 px-2 items-center shadow-lg shadow-gray-900/90
-                        `}>
+                        `}
+                        >
                             <tag.icon class="size-5 rounded-md" />
                             {tag.name}
-                            </span>
+                        </span>
                     </li>
                 ))}
             </ul>
 
-            <ul class="flex max-h-72 gap-x-2 mt-5">
+            <ul class="flex max-h-80 gap-x-2 mt-5">
                 {project.image.map((images) => (
-                    <li>
+                    <li class="relative">
                         <img
                             src={images}
                             alt="Captura de pantalla del proyecto"
-                            class=" w-auto h-full object-cover rounded-xl shadow-lg shadow-gray-900/90"
+                            class="  w-full h-full object-cover rounded-xl shadow-lg shadow-gray-900/90"
                         />
+                        <div class=" absolute bottom-2 right-2 w-full flex justify-end">
+                            <a
+                                href={project.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="flex items-center gap-x-2 py-2 px-4
+                                     rounded-full border bg-black/70 backdrop-blur-sm
+                                        
+                                     hover:scale-105 hover:bg-black/40 transition w-48 z-20"
+                            >
+                                Conoce mas aquí
+                                <UpIcon class="size-5 rotate-90" />
+                            </a>
+                        </div>
                     </li>
                 ))}
             </ul>
+            
         </article>
     ))
 }
