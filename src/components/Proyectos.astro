@@ -5,6 +5,7 @@ import JavaScript_Icon from "./icons/JavaScript_Icon.astro";
 import Tailwind_Icon from "./icons/Tailwind.astro";
 import Astro_Icon from "./icons/AstroIcon.astro";
 import UpIcon from "./icons/UpIcon.astro";
+import ReactIcon from "./icons/ReactIcon.astro";
 
 const TAGS = {
     html: {
@@ -31,6 +32,11 @@ const TAGS = {
         name: "Astro",
         class: "bg-gray-600/70 text-white",
         icon: Astro_Icon,
+    },
+    react: {
+        name: "React",
+        class: "bg-gray-600/70 text-white",
+        icon: ReactIcon,
     },
 };
 
@@ -66,6 +72,16 @@ const PROYECTS = [
         image: ["/penvid.gif"],
         tags: [TAGS.html, TAGS.css, TAGS.javascript],
         link: "/demos-site"
+    },
+
+    {
+        title: "React Tic-Tac-Toe",
+        description:
+            "Juego de Gato desarrollado con React, cuenta con persistencia local en navegador y manejo de estados.",
+
+        image: ["/proeyectos_imagenes/tic-tac-toe.webp"],
+        tags: [TAGS.react],
+        link: "https://github.com/Arbyl/react-tic-tac-toe"
     },
 ];
 ---
