@@ -6,6 +6,14 @@ import Tailwind_Icon from "./icons/Tailwind.astro";
 import Astro_Icon from "./icons/AstroIcon.astro";
 import UpIcon from "./icons/UpIcon.astro";
 import ReactIcon from "./icons/ReactIcon.astro";
+import NextjsIcon from "./icons/NextjsIcon.astro";
+import GraphQLIcon from "./icons/GraphQLIcon.astro";
+import NodeIcon from "./icons/NodeIcon.astro";
+import MongoIcon from "./icons/MongoIcon.astro";
+import FirebaseIcon from "./icons/FirebaseIcon.astro";
+import FramerIcon from "./icons/FramerIcon.astro";
+import ApolloIcon from "./icons/ApolloIcon.astro";
+import WordpressOIcon from "./icons/WordpressIcon.astro";
 
 const TAGS = {
     html: {
@@ -38,10 +46,90 @@ const TAGS = {
         class: "bg-gray-600/70 text-white",
         icon: ReactIcon,
     },
+    nextjs: {
+        name: "Next.js",
+        class: "bg-gray-600/70 text-white",
+        icon: NextjsIcon,
+    },
+    grapqhql: {
+        name: "GraphQL",
+        class: "bg-gray-600/70 text-white",
+        icon: GraphQLIcon,
+    },
+    nodejs: {
+        name: "Node.js",
+        class: "bg-gray-600/70 text-white",
+        icon: NodeIcon,
+    },
+    mongodb: {
+        name: "MongoDB",
+        class: "bg-gray-600/70 text-white",
+        icon: MongoIcon,
+    },
+    firebase: {
+        name: "Firebase",
+        class: "bg-gray-600/70 text-white",
+        icon: FirebaseIcon,
+    },
+    framer: {
+        name: "Framer Motion",
+        class: "bg-gray-600/70 text-white",
+        icon: FramerIcon,
+    },
+    apollo: {
+        name: "Apollo",
+        class: "bg-gray-600/70 text-white",
+        icon: ApolloIcon,
+    },
+    wordpress: {
+        name: "WordPress",
+        class: "bg-gray-600/70 text-white",
+        icon: WordpressOIcon,
+    },
 };
 
 // AGREGAR AQUI LOS PROYECTOS PARA MOSTRAR EN LA PAGINA
 const PROYECTS = [
+    {
+        title: "Creación pagina web Aorocoin.com",
+        description:
+            "Desarrollo de la pagina web de Aorocoin, una criptomoneda basada en reservas de oro, con implementación de animaciones y transiciones atractivas para los usuarios.",
+        image: ["/proyectos_imagenes/aorocoin.webp"],
+        tags: [TAGS.nextjs, TAGS.grapqhql, TAGS.apollo, TAGS.firebase , TAGS.framer],
+        link: "https://aorocoin.com",
+    },
+    {
+        title: "KGK Ingeniería",
+        description:
+            "Desarrollo, optimización y aplicacion de medidas de seguridad (firewall, monitoreo y analíticas) de la pagina web de KGK Ingeniería, una empresa de ingeniería especializada en la construcción de obras civiles e infraestructura.",
+        image: ["/proyectos_imagenes/kgk.png"],
+        tags: [TAGS.wordpress],
+        link: "https://kgkingenieria.com",
+    },
+    {
+        title: "Dymm",
+        description:
+            "Desarrollo de la pagina web de Dymm, una empresa de limpieza especializada en la creación de soluciones para empresas.",
+        image: ["/proyectos_imagenes/dymm.png"],
+        tags: [TAGS.wordpress],
+        link: "https://dymm.com.co",
+    },
+    {
+        title: "American Denim Shop",
+        description:
+            "Desarrollo de la pagina web de American Denim Shop, una tienda online de ropa especializada en la venta de pijamas y ropa interior.",
+        image: ["/proyectos_imagenes/americandenim.png"],
+        tags: [TAGS.wordpress],
+        link: "https://americandenimshop.com",
+    },
+    {
+        title: "BWS Vinos",
+        description:
+            "Desarrollo de la pagina web de BWS Vinos, una tienda online de vinos y licores especializada en la venta de vinos y licores importados.",
+        image: ["/proyectos_imagenes/bws.png"],
+        tags: [TAGS.wordpress],
+        link: "https://bws.com.co",
+    },
     {
         title: "Rediseño de la página de Portafolio.co",
         description:
@@ -61,7 +149,7 @@ const PROYECTS = [
             "Clon de la pagina de Lego con Astro, uso de View Transitions, y manejo de datos con Astro.",
         image: ["/proyectos_imagenes/lego-shot.jpg"],
         tags: [TAGS.astro, TAGS.html, TAGS.css, TAGS.javascript],
-        link: "https://symphonious-salmiakki-c88526.netlify.app/"
+        link: "https://symphonious-salmiakki-c88526.netlify.app/",
     },
 
     {
@@ -71,7 +159,7 @@ const PROYECTS = [
 
         image: ["/penvid.gif"],
         tags: [TAGS.html, TAGS.css, TAGS.javascript],
-        link: "/demos-site"
+        link: "/demos-site",
     },
 
     {
@@ -81,7 +169,7 @@ const PROYECTS = [
 
         image: ["/proyectos_imagenes/tictactoe.webp"],
         tags: [TAGS.react],
-        link: "https://github.com/Arbyl/react-tic-tac-toe"
+        link: "https://github.com/Arbyl/react-tic-tac-toe",
     },
 ];
 ---
@@ -93,7 +181,7 @@ const PROYECTS = [
                 {project.title}
             </h3>
             <p class="text-base mb-4 text-pretty">{project.description}</p>
-            <ul class="flex gap-x-2 flex-row">
+            <ul class="flex gap-x-2 flex-row overflow-auto scrollbar-hide">
                 {project.tags.map((tag) => (
                     <li>
                         <span
@@ -133,7 +221,6 @@ const PROYECTS = [
                     </li>
                 ))}
             </ul>
-            
         </article>
     ))
 }
